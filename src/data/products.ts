@@ -203,11 +203,23 @@ export const girlSquad: Product[] = [
   },
 ];
 
+export const allProducts: Product[] = [
+  ...animeJerseys,
+  ...acidWashCollection,
+  ...bestSellers,
+  ...oversizedTees,
+  ...girlSquad,
+];
+
+export function getProductById(id: string): Product | undefined {
+  return allProducts.find((p) => p.id === id);
+}
+
 export const categories = [
-  { name: "Anime Jerseys", slug: "anime-jerseys", image: cat("1a1a2e", "ANIME JERSEYS") },
-  { name: "Acid Wash Drop", slug: "acid-wash", image: cat("263238", "ACID WASH DROP") },
-  { name: "Girl Squad", slug: "girl-squad", image: cat("880e4f", "GIRL SQUAD") },
-  { name: "Hawaiian Shirts", slug: "hawaiian-shirts", image: cat("1b5e20", "HAWAIIAN SHIRTS") },
+  { name: "Anime Jerseys", slug: "anime-jerseys", image: cat("1a1a2e", "ANIME JERSEYS"), sectionId: "anime-jerseys" },
+  { name: "Acid Wash Drop", slug: "acid-wash", image: cat("263238", "ACID WASH DROP"), sectionId: "acid-wash" },
+  { name: "Girl Squad", slug: "girl-squad", image: cat("880e4f", "GIRL SQUAD"), sectionId: "girl-squad" },
+  { name: "Hawaiian Shirts", slug: "hawaiian-shirts", image: cat("1b5e20", "HAWAIIAN SHIRTS"), sectionId: "#" },
 ];
 
 export const instagramPosts = [

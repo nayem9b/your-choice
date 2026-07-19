@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
+import CartDrawer from "@/components/CartDrawer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -30,7 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${playfairDisplay.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
-        {children}
+        <CartProvider>
+          <CartDrawer />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

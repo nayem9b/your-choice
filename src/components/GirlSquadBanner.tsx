@@ -10,7 +10,6 @@ interface GirlSquadProps {
 export default function GirlSquadBanner({ products }: GirlSquadProps) {
   return (
     <section>
-      {/* Hero banner */}
       <div className="max-w-[1400px] mx-auto px-5 lg:px-8 py-6 lg:py-8">
         <div className="relative bg-blush rounded-3xl overflow-hidden py-20 md:py-28 text-center">
           <div className="absolute inset-0 opacity-10">
@@ -34,7 +33,7 @@ export default function GirlSquadBanner({ products }: GirlSquadProps) {
             </p>
             <div className="mt-7">
               <Link
-                href="/"
+                href="#girl-squad"
                 className="inline-flex items-center gap-3 bg-foreground text-white font-sans font-bold text-[13px] tracking-[0.1em] uppercase px-8 py-3.5 rounded-full hover:bg-foreground/80 transition-all duration-300 btn-shine"
               >
                 Shop now
@@ -47,7 +46,6 @@ export default function GirlSquadBanner({ products }: GirlSquadProps) {
         </div>
       </div>
 
-      {/* Product grid */}
       <div className="max-w-[1400px] mx-auto px-5 lg:px-8 pb-10 lg:pb-14">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-5">
           {products.map((product) => (

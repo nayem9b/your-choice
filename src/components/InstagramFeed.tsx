@@ -17,10 +17,9 @@ export default function InstagramFeed() {
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 lg:gap-3">
         {instagramPosts.map((post) => (
-          <a
+          <div
             key={post.id}
-            href="#"
-            className="group relative aspect-square rounded-2xl overflow-hidden"
+            className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer"
           >
             <div
               className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
@@ -52,7 +51,7 @@ export default function InstagramFeed() {
                 />
               </svg>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>

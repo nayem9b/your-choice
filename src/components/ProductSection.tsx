@@ -4,16 +4,18 @@ import ProductCard from "./ProductCard";
 interface ProductSectionProps {
   title: string;
   products: Product[];
+  sectionId?: string;
   viewMoreLink?: string;
 }
 
 export default function ProductSection({
   title,
   products,
+  sectionId,
   viewMoreLink = "/",
 }: ProductSectionProps) {
   return (
-    <section className="max-w-[1400px] mx-auto px-5 lg:px-8 py-10 lg:py-14">
+    <section id={sectionId} className="max-w-[1400px] mx-auto px-5 lg:px-8 py-10 lg:py-14 scroll-mt-40">
       <div className="flex items-end justify-between mb-8 lg:mb-10">
         <div>
           <h2 className="font-display font-black text-2xl lg:text-3xl uppercase tracking-tight text-foreground">
@@ -35,17 +37,6 @@ export default function ProductSection({
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-      </div>
-      <div className="mt-8 lg:mt-10 flex justify-center sm:hidden">
-        <a
-          href={viewMoreLink}
-          className="inline-flex items-center gap-2 bg-foreground text-white font-sans font-bold text-[13px] tracking-[0.08em] uppercase px-10 py-3.5 rounded-full hover:bg-foreground/80 transition-all btn-shine"
-        >
-          View More
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
       </div>
     </section>
   );

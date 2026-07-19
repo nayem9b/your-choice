@@ -7,7 +7,6 @@ export default function Footer() {
     <footer className="bg-foreground text-white">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-8 py-14 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 lg:gap-8">
-          {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
             <Link href="/" className="inline-block">
               <span className="font-display font-black text-xl tracking-[0.15em] text-white">
@@ -38,19 +37,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
           {[
             {
               title: "Shop",
-              links: ["Acid Wash Drop", "Anime Jersey", "Girl Squad", "Hawaiian Shirts"],
+              links: [
+                { label: "Acid Wash Drop", href: "#acid-wash" },
+                { label: "Anime Jersey", href: "#anime-jerseys" },
+                { label: "Girl Squad", href: "#girl-squad" },
+                { label: "Hawaiian Shirts", href: "#" },
+              ],
             },
             {
               title: "About",
-              links: ["About Us", "Privacy Policy"],
+              links: [
+                { label: "About Us", href: "#" },
+                { label: "Privacy Policy", href: "#" },
+              ],
             },
             {
               title: "Help",
-              links: ["Contact", "FAQs", "Shipping Info"],
+              links: [
+                { label: "Contact", href: "#" },
+                { label: "FAQs", href: "#faq" },
+                { label: "Shipping Info", href: "#" },
+              ],
             },
           ].map((col) => (
             <div key={col.title}>
@@ -59,20 +69,19 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3">
                 {col.links.map((link) => (
-                  <li key={link}>
-                    <Link
-                      href="/"
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
                       className="font-serif text-sm text-white/35 hover:text-white/80 transition-colors duration-200"
                     >
-                      {link}
-                    </Link>
+                      {link.label}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
 
-          {/* Newsletter mini */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <h4 className="font-sans font-bold text-[11px] uppercase tracking-[0.15em] text-white/60 mb-5">
               Stay Connected
@@ -99,7 +108,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-12 lg:mt-14 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-sans text-[11px] text-white/25 tracking-wide">
             &copy; {new Date().getFullYear()} VAIVENE. All rights reserved.

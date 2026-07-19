@@ -29,37 +29,49 @@ export default function Home() {
         <ProductSection
           title="Anime Jerseys"
           products={animeJerseys}
+          sectionId="anime-jerseys"
         />
 
         <ProductSection
           title="Acid Wash Drop Collection"
           products={acidWashCollection}
+          sectionId="acid-wash"
         />
 
-        <CustomDesignBanner />
+        <div id="custom-design">
+          <CustomDesignBanner />
+        </div>
 
         <ProductSection
           title="Best Sellers"
           products={bestSellers}
+          sectionId="bestsellers"
         />
 
         <ProductSection
           title="Oversized T-Shirts & Gaming"
           products={oversizedTees}
+          sectionId="oversized-tees"
         />
 
-        <GirlSquadBanner products={girlSquad} />
+        <div id="girl-squad">
+          <GirlSquadBanner products={girlSquad} />
+        </div>
 
         <InstagramFeed />
 
         <FAQAccordion />
 
-        <ValueProps />
+        <div id="value-props">
+          <ValueProps />
+        </div>
 
         <Newsletter />
       </main>
 
-      <Footer />
+      <div id="footer">
+        <Footer />
+      </div>
     </>
   );
 }

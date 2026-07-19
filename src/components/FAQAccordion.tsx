@@ -7,7 +7,7 @@ export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="max-w-3xl mx-auto px-5 lg:px-8 py-14 lg:py-20">
+    <section id="faq" className="max-w-3xl mx-auto px-5 lg:px-8 py-14 lg:py-20 scroll-mt-40">
       <div className="text-center mb-10">
         <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-muted font-medium mb-3">
           Support
