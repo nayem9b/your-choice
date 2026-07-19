@@ -1,3 +1,4 @@
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import HeroBanner from "@/components/HeroBanner";
 import ProductSection from "@/components/ProductSection";
@@ -6,6 +7,7 @@ import GirlSquadBanner from "@/components/GirlSquadBanner";
 import InstagramFeed from "@/components/InstagramFeed";
 import FAQAccordion from "@/components/FAQAccordion";
 import ValueProps from "@/components/ValueProps";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import {
   animeJerseys,
@@ -18,6 +20,7 @@ import {
 export default function Home() {
   return (
     <>
+      <AnnouncementBar />
       <Navbar />
 
       <main className="flex-1">
@@ -52,6 +55,8 @@ export default function Home() {
         <FAQAccordion />
 
         <ValueProps />
+
+        <Newsletter />
       </main>
 
       <Footer />

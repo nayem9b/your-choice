@@ -5,38 +5,48 @@ export interface Product {
   originalPrice?: number;
   onSale?: boolean;
   image: string;
+  tag?: string;
 }
+
+const p = (bg: string, text: string) =>
+  `https://placehold.co/400x500/${bg}/ffffff?text=${encodeURIComponent(text)}&font=montserrat`;
+
+const cat = (bg: string, text: string) =>
+  `https://placehold.co/400x300/${bg}/ffffff?text=${encodeURIComponent(text)}&font=montserrat`;
+
 
 export const animeJerseys: Product[] = [
   {
     id: "aj-1",
     name: "Madara Uchiha | Premium Anime Jersey - Oversized Streetwear",
     price: 650,
-    image: "/products/madara-jersey.svg",
+    image: p("1a1a2e", "MADARA UCHIHA JERSEY"),
+    tag: "NEW",
   },
   {
     id: "aj-2",
     name: "Roronoa Zoro Premium Anime Jersey - Oversized Streetwear",
     price: 650,
-    image: "/products/zoro-jersey.svg",
+    image: p("162440", "RORONOA ZORO JERSEY"),
   },
   {
     id: "aj-3",
     name: "Monkey D. Luffy Premium Anime Jersey - Oversized Streetwear",
     price: 650,
-    image: "/products/luffy-jersey.svg",
+    image: p("8B0000", "MONKEY D. LUFFY JERSEY"),
+    tag: "BESTSELLER",
   },
   {
     id: "aj-4",
     name: "Ichigo Kurosaki | Premium Anime Jersey - Oversized Streetwear",
     price: 650,
-    image: "/products/ichigo-jersey.svg",
+    image: p("4a148c", "ICHIGO KUROSAKI JERSEY"),
   },
   {
     id: "aj-5",
     name: "Portgas D. Ace | Premium Anime Jersey - Oversized Streetwear",
     price: 650,
-    image: "/products/ace-jersey.svg",
+    image: p("b71c1c", "PORTGAS D. ACE JERSEY"),
   },
 ];
 
@@ -45,31 +55,32 @@ export const acidWashCollection: Product[] = [
     id: "aw-1",
     name: "Fullmetal Alchemist - Brotherhood Streetwear Drop Tee - Acid Wash Edition",
     price: 699,
-    image: "/products/fma-acidwash.svg",
+    image: p("263238", "FMA BROTHERHOOD ACID WASH"),
+    tag: "NEW",
   },
   {
     id: "aw-2",
-    name: "Spider-Inspired | Acid Wash Oversized Drop Shoulder T-Shirt | Premium Streetwear",
+    name: "Spider-Inspired | Acid Wash Oversized Drop Shoulder T-Shirt",
     price: 699,
-    image: "/products/spider-acidwash.svg",
+    image: p("b71c1c", "SPIDER INSPIRED ACID WASH"),
   },
   {
     id: "aw-3",
     name: "Eren Yeager Acid Wash Drop Shoulder Tee | Premium Streetwear",
     price: 699,
-    image: "/products/eren-acidwash.svg",
+    image: p("1b5e20", "EREN YEAGER ACID WASH"),
   },
   {
     id: "aw-4",
     name: "Killua Zoldyck HxH Streetwear Tee - Acid Wash Edition",
     price: 699,
-    image: "/products/killua-acidwash.svg",
+    image: p("0d47a1", "KILLUA ZOLDYCK ACID WASH"),
   },
   {
     id: "aw-5",
     name: "Denji Chainsawman Streetwear Tee - Acid Wash Edition",
     price: 699,
-    image: "/products/denji-acidwash.svg",
+    image: p("4a148c", "DENJI CHAINSAWMAN ACID WASH"),
   },
 ];
 
@@ -78,7 +89,7 @@ export const bestSellers: Product[] = [
     id: "bs-1",
     name: "Tanjiro Kamado Demon Slayer Streetwear Tee - Acid Wash Edition",
     price: 699,
-    image: "/products/tanjiro-bs.svg",
+    image: p("004d40", "TANJIRO DEMON SLAYER TEE"),
   },
   {
     id: "bs-2",
@@ -86,13 +97,14 @@ export const bestSellers: Product[] = [
     price: 999,
     originalPrice: 1600,
     onSale: true,
-    image: "/products/nika-bs.svg",
+    image: p("e65100", "SUN GOD NIKA PREMIUM"),
+    tag: "SALE",
   },
   {
     id: "bs-3",
-    name: "Toji Anime Baggy Sweatpants Heavyweight 300 GSM Gym & Streetwear Bangladesh",
+    name: "Toji Anime Baggy Sweatpants Heavyweight 300 GSM Gym & Streetwear",
     price: 1199,
-    image: "/products/toji-bs.svg",
+    image: p("212121", "TOJI BAGGY SWEATPANTS"),
   },
   {
     id: "bs-4",
@@ -100,7 +112,8 @@ export const bestSellers: Product[] = [
     price: 1599,
     originalPrice: 2000,
     onSale: true,
-    image: "/products/zoro-hoodie.svg",
+    image: p("0d1b2a", "ZORO EGGHEAD ZIP HOODIE"),
+    tag: "SALE",
   },
   {
     id: "bs-5",
@@ -108,40 +121,42 @@ export const bestSellers: Product[] = [
     price: 1280,
     originalPrice: 1600,
     onSale: true,
-    image: "/products/aot-hoodie.svg",
+    image: p("37474d", "AOT WINGS OF FREEDOM"),
+    tag: "SALE",
   },
 ];
 
 export const oversizedTees: Product[] = [
   {
     id: "ot-1",
-    name: "Sung Jinwoo | Solo Leveling | Oversized Drop Shoulder / Half Sleeve T-shirt",
+    name: "Sung Jinwoo | Solo Leveling | Oversized Drop Shoulder T-shirt",
     price: 599,
-    image: "/products/jinwoo-oversized.svg",
+    image: p("102040", "SUNG JINWOO SOLO LEVELING"),
+    tag: "NEW",
   },
   {
     id: "ot-2",
     name: "Might Guy - Gate of Death Oversized Drop Shoulder Tee",
     price: 650,
-    image: "/products/guy-oversized.svg",
+    image: p("bf360c", "MIGHT GATE OF DEATH TEE"),
   },
   {
     id: "ot-3",
-    name: "Maki Zenin - Oversized Drop Shoulder T-Shirt | Premium Jujutsu Kaisen Anime Streetwear",
+    name: "Maki Zenin - Oversized Drop Shoulder T-Shirt | Jujutsu Kaisen",
     price: 599,
-    image: "/products/maki-oversized.svg",
+    image: p("4a148c", "MAKI ZENIN JJK TEE"),
   },
   {
     id: "ot-4",
-    name: "Rainbow Six Siege Inspired Oversized Drop Shoulder T-Shirt | Premium Gaming Streetwear",
+    name: "Rainbow Six Siege Inspired Oversized Drop Shoulder T-Shirt",
     price: 599,
-    image: "/products/r6-oversized.svg",
+    image: p("1565c0", "R6 SIEGE GAMING TEE"),
   },
   {
     id: "ot-5",
     name: "Player Unknown - Victory Tshirt | Premium Gaming Drop Shoulder",
     price: 599,
-    image: "/products/pubg-oversized.svg",
+    image: p("37474d", "PUBG VICTORY TEE"),
   },
 ];
 
@@ -150,13 +165,14 @@ export const girlSquad: Product[] = [
     id: "gs-1",
     name: "The Mother of Dragons | Beige Acid Wash Drop Shoulder Tee",
     price: 699,
-    image: "/products/dragons-girls.svg",
+    image: p("4e342e", "MOTHER OF DRAGONS TEE"),
   },
   {
     id: "gs-2",
     name: "Zero Two - Darling in the Franxx Oversized Drop Hoodie | Pink Edition",
     price: 890,
-    image: "/products/zerotwo-girls.svg",
+    image: p("c2185b", "ZERO TWO PINK HOODIE"),
+    tag: "NEW",
   },
   {
     id: "gs-3",
@@ -164,7 +180,8 @@ export const girlSquad: Product[] = [
     price: 790,
     originalPrice: 1199,
     onSale: true,
-    image: "/products/asuna-girls.svg",
+    image: p("546e7a", "ASUNA SAO HOODIE"),
+    tag: "SALE",
   },
   {
     id: "gs-4",
@@ -172,7 +189,8 @@ export const girlSquad: Product[] = [
     price: 699,
     originalPrice: 1200,
     onSale: true,
-    image: "/products/mikasa-girls.svg",
+    image: p("880e4f", "MIKASA AOT SWEATSHIRT"),
+    tag: "SALE",
   },
   {
     id: "gs-5",
@@ -180,15 +198,29 @@ export const girlSquad: Product[] = [
     price: 790,
     originalPrice: 1200,
     onSale: true,
-    image: "/products/violet-girls.svg",
+    image: p("7b1fa2", "VIOLET EVERGARDEN HOODIE"),
+    tag: "SALE",
   },
 ];
 
 export const categories = [
-  { name: "Anime Jerseys", slug: "anime-jerseys", image: "/categories/anime-jerseys.svg" },
-  { name: "Acid Wash Drop Collection", slug: "acid-wash", image: "/categories/acid-wash.svg" },
-  { name: "Girl Squad Collections", slug: "girl-squad", image: "/categories/girl-squad.svg" },
-  { name: "Hawaiian Shirts", slug: "hawaiian-shirts", image: "/categories/hawaiian.svg" },
+  { name: "Anime Jerseys", slug: "anime-jerseys", image: cat("1a1a2e", "ANIME JERSEYS") },
+  { name: "Acid Wash Drop", slug: "acid-wash", image: cat("263238", "ACID WASH DROP") },
+  { name: "Girl Squad", slug: "girl-squad", image: cat("880e4f", "GIRL SQUAD") },
+  { name: "Hawaiian Shirts", slug: "hawaiian-shirts", image: cat("1b5e20", "HAWAIIAN SHIRTS") },
+];
+
+export const instagramPosts = [
+  { id: 1, color: "#1a1a2e", label: "@vaivene" },
+  { id: 2, color: "#263238", label: "New Drop" },
+  { id: 3, color: "#b71c1c", label: "Acid Wash" },
+  { id: 4, color: "#0d47a1", label: "Anime Tee" },
+  { id: 5, color: "#4a148c", label: "Hoodie" },
+  { id: 6, color: "#1b5e20", label: "Process" },
+  { id: 7, color: "#e65100", label: "Fan Edit" },
+  { id: 8, color: "#004d40", label: "Behind" },
+  { id: 9, color: "#880e4f", label: "Collection" },
+  { id: 10, color: "#37474d", label: "Lookbook" },
 ];
 
 export const faqItems = [

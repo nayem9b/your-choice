@@ -1,51 +1,44 @@
-const instagramPosts = [
-  { id: 1, color: "#1a1a2e", label: "Reel" },
-  { id: 2, color: "#2c3e50", label: "Print" },
-  { id: 3, color: "#e94560", label: "Fabric" },
-  { id: 4, color: "#0f3460", label: "Lookbook" },
-  { id: 5, color: "#533483", label: "Reel" },
-  { id: 6, color: "#16a085", label: "Process" },
-  { id: 7, color: "#e67e22", label: "Fan" },
-  { id: 8, color: "#2980b9", label: "Reel" },
-  { id: 9, color: "#8e44ad", label: "Fabric" },
-  { id: 10, color: "#c0392b", label: "Lookbook" },
-];
+import { instagramPosts } from "@/data/products";
 
 export default function InstagramFeed() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="text-center mb-8">
-        <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-wide text-black">
+    <section className="max-w-[1400px] mx-auto px-5 lg:px-8 py-14 lg:py-20">
+      <div className="text-center mb-10 lg:mb-12">
+        <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-muted font-medium mb-3">
+          @vaivene
+        </p>
+        <h2 className="font-display font-black text-2xl lg:text-3xl uppercase tracking-tight text-foreground">
           Follow us on Instagram
         </h2>
-        <p className="mt-2 font-serif text-slate-gray">
+        <p className="mt-3 font-serif text-sm lg:text-base text-muted max-w-md mx-auto">
           Join our community for daily inspiration and a closer look at our
           creations
         </p>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 lg:gap-3">
         {instagramPosts.map((post) => (
-          <div
+          <a
             key={post.id}
-            className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer"
+            href="#"
+            className="group relative aspect-square rounded-2xl overflow-hidden"
           >
             <div
-              className="absolute inset-0"
+              className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
               style={{ backgroundColor: post.color }}
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-sans text-white/60 text-xs uppercase tracking-wider">
+              <span className="font-sans text-white/40 text-[10px] tracking-[0.15em] uppercase font-medium group-hover:text-white/80 transition-colors duration-300">
                 {post.label}
               </span>
             </div>
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-white"
+                className="h-7 w-7 text-white transform scale-75 group-hover:scale-100 transition-transform duration-300"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth={2}
+                strokeWidth={1.5}
               >
                 <path
                   strokeLinecap="round"
@@ -59,7 +52,7 @@ export default function InstagramFeed() {
                 />
               </svg>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
